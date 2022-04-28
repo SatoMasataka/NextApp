@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <body>
+        <textarea id="textarea" rows=10 cols=80></textarea>
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+        <script>
+            var recognizing;
+    
+            init();
+            function init() {
+                window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+                recognition = new webkitSpeechRecognition();
+                recognition.continuous = true;
+                recognition.lang = 'ja';
+                recognition.interimResults = true;
+    
+                recognition.onend = reset;
+                recognition.onresult = disp;
+    
+            }
+            function disp(event) {
+                var results = event.results;
+                for (var i = event.resultIndex; i < results.length; ++i) {
+                    if (results[i].isFinal) {
+                        document.getElementById('textarea').value += results[i][0].transcript + "\n";
+                    }
+                }
+            }
+            function start() {
+                init();
+                recognition.start();
+            }
+            function stop() {
+                recognition.onend = null;
+                recognition.stop();
+            }
+    
+            function reset() { 
+               // console.log("reset\n");
+                init();
+                recognition.start();
+            } 
+            recognition.onerror = function(event)  {
+                console.log('音声認識エラーが検出されました：' + event.error);
+            }
+        </script>
+    </body>
+<html>
