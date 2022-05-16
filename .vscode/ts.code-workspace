@@ -1,0 +1,11 @@
+{
+    "folders": [
+		{
+			"path": "../../tsreact"
+		},
+		{
+			"path": ".."
+		}
+	],
+    "settings": {}
+}

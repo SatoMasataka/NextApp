@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // For server side rendering debug
+            "type": "node",
+            "request": "launch",
+            "name": "Next: Node",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal" // 内部のターミナルタブで起動します
+        }
+    ]
+}

@@ -10,6 +10,7 @@
         "export": "next export"
     },
     "dependencies": {
+        "@react-three/fiber": "^7.0.28",
         "@types/react-speech-recognition": "^3.9.0",
         "@types/three": "^0.139.0",
         "jsdom": "^19.0.0",
@@ -17,6 +18,9 @@
         "react": "18.0.0",
         "react-dom": "18.0.0",
         "react-speech-recognition": "^3.9.0",
+        "react-three": "^0.9.7",
+        "react-use": "^17.3.2",
+        "regenerator-runtime": "^0.13.9",
         "three": "^0.139.2"
     },
     "devDependencies": {
